@@ -18,12 +18,14 @@ Terdapat 2 role di aplikasi ini yaitu admin dan petugas
 Hak Akses untuk Setiap Role:
 
 •	Admin:
+
 Mengelola barang, supplier, pembelian, penjualan, dan stok
 Membuat dan menghapus akun petugas
 Melihat dan mengunduh laporan inventori
 Mengelola pengaturan aplikasi (seperti backup data, dll.)
 
 •	Petugas:
+
 Mengelola data barang (memperbarui stok, mencatat barang masuk/keluar)
 Melakukan transaksi pembelian dan penjualan
 Melihat data barang dan supplier, tetapi tidak bisa menghapus atau menambahkan pengguna baru
