@@ -16,6 +16,7 @@ Sistem ini masih dalam proses pengembangan, dimana nantinya akan ada fitur seper
 Terdapat 2 role di aplikasi ini yaitu admin dan petugas
 
 Hak Akses untuk Setiap Role:
+
 •	Admin:
 Mengelola barang, supplier, pembelian, penjualan, dan stok
 Membuat dan menghapus akun petugas
