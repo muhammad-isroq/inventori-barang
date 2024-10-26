@@ -6,6 +6,8 @@
 	<title>Document</title>
 </head>
 <body>
-	<h1>ini halaman petugas</h1>
+	<div class="bg-success">
+		<h1>ini halaman petugas</h1>
+	</div>
 </body>
 </html>
