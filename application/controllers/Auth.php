@@ -5,11 +5,11 @@ class Auth extends CI_Controller{
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model('LoginModel');
+		$this->load->model('M_login');
 	}
 
 	public function index(){
-		$this->load->view('VLogin');
+		$this->load->view('V_login');
 	}
 
 	public function login(){
@@ -25,7 +25,7 @@ class Auth extends CI_Controller{
 				'password' => $pass
 				);
 
-			$cekLogin = $this->LoginModel->cek_login($where);
+			$cekLogin = $this->M_login->cek_login($where);
 
 			if($cekLogin->num_rows() > 0){
 				$dataLogin = $cekLogin->row();
@@ -38,9 +38,9 @@ class Auth extends CI_Controller{
 				$this->session->set_userdata($sess_data);
 
 				if($dataLogin->role == 'admin'){
-					redirect('Admin');
+					redirect('Dashboard_admin');
 				} elseif($dataLogin->role == 'petugas'){
-					redirect('Petugas');
+					redirect('Dashboard_petugas');
 				} else {
 					$this->session->set_flashdata('error', 'Role tidak dikenal');
 					redirect('Auth');
@@ -50,7 +50,7 @@ class Auth extends CI_Controller{
 				redirect('Auth');
 			}
 		} else{
-			$this->load->view('VLogin');
+			$this->load->view('V_login');
 		}
 	}
 

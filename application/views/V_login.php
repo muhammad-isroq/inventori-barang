@@ -36,7 +36,7 @@
         <img class="m-3" src="<?=base_url();?>/assets/logo-sistem.png" alt="" width="50" height="50">Sistem Inventori Barang
     </div>
     <br>
-    <form class="form-signin bg-body rounded form-lg" method="POST" action=""
+    <form class="form-signin bg-body rounded form-lg" method="POST" action="<?= base_url('Auth/login');?>"
     >
     <img class="mb-4" src="<?=base_url();?>/assets/logo-login.png" alt="" width="100" height="100">
     <h1 class="h3 mb-3 font-weight-normal">Log In</h1>    
@@ -51,7 +51,14 @@
 <script type="text/javascript">
     const usr = document.getElementById('usr');
     usr.addEventListener("keydown", function(){
-        usr.classList.add('bg-secondary text-white');
+        usr.classList.add('bg-success-subtle');
+        
+    })
+
+    const pss = document.getElementById('inputPassword');
+    pss.addEventListener("keydown", function(){
+        pss.classList.add('bg-success-subtle');
+        
     })
 </script>
 
