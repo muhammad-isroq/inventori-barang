@@ -6,6 +6,8 @@
     <title>log in</title>
     <link rel="icon" href="<?= base_url();?>/assets/logo-login.png" type="image">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="<?= base_url('node_modules/aos/dist/aos.css'); ?>">
 </head>
 <style>
     body{
@@ -33,7 +35,9 @@
 </style>
 <body class="text-center bg-secondary-subtle">
     <div class="container-fluid mx auto">
-        <div class="row row-md-2">
+        <div class="row row-md-2" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000">
             <!-- <div class="col-md mb-3">
                 <img src="<?= base_url();?>/assets/penyimpanan.jpg" class="img-fluid rounded" alt="">
             </div> -->
@@ -44,7 +48,7 @@
                 <br>
                 <form class="form-signin bg-body rounded form-lg shadow bg-body-tertiary rounded" method="POST" action="<?= base_url('Auth/login');?>"
                     >
-                    <img class="mb-4" src="<?=base_url();?>/assets/logo-login.png" alt="" width="100" height="100">
+                    <img class="mb-4 animate__animated animate__flip animate__infinite infinite" src="<?=base_url();?>/assets/logo-login.png" alt="" width="100" height="100" >
                     <h1 class="h3 mb-3 font-weight-normal">Log In</h1>    
 
                     <label for="inputEmail" class="sr-only float-start mb-2">Username</label>
@@ -57,7 +61,12 @@
         </div>
     </div>
 
-    <script type="text/javascript">
+    <script src="<?= base_url('node_modules/aos/dist/aos.js'); ?>"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script type="text/javascript">        
         const usr = document.getElementById('usr');
         usr.addEventListener("keydown", function(){
             usr.classList.add('bg-success-subtle');
