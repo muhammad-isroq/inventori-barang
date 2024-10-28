@@ -17,6 +17,7 @@ class Pembelian extends CI_Controller {
     public function index()
     {
         $data['pembelian'] = $this->M_pembelian->tampil_data()->result_array();
+        
         $data['barang'] = $this->M_barang->tampil_data()->result_array();
         $data['supplier'] = $this->M_supplier->tampil_data()->result_array();
 
@@ -36,13 +37,13 @@ class Pembelian extends CI_Controller {
         $m = $this->input->POST('status_pembayaran');
         
         $data = array(
-            'barang' => $c,
-            'supplier' => $n,
+            'id_barang' => $c,
+            'id_supplier' => $n,
             'tgl_pembelian' => $z,
             'kode_pembelian' => $x,
             'jumlah_barang' => $v,
             'harga_total' => $b,
-            'status_pembayaran' => $m,
+            'status_pembayaran' => $m
         );
         
         $this->M_pembelian->insert_data($data);
@@ -62,21 +63,20 @@ class Pembelian extends CI_Controller {
         $b = $this->input->POST('harga_total');
         $m = $this->input->POST('status_pembayaran');
 
-
         $data = array(
-            'barang' => $c,
-            'supplier' => $n,
+            'id_barang' => $c,
+            'id_supplier' => $n,
             'tgl_pembelian' => $z,
             'kode_pembelian' => $x,
             'jumlah_barang' => $v,
             'harga_total' => $b,
-            'status_pembayaran' => $m,
+            'status_pembayaran' => $m
         );
 
         $where = array('id_pembelian' => $id);
         $this->M_pembelian->update_data($data, $where);
         $this->session->set_flashdata('edit','data berhasil di update');
-        redirect('Pembelian');   
+        redirect('Pembelian');    
     }
 
     public function hapus_pembelian($id)

@@ -108,16 +108,13 @@
 												<td><?= $no; ?></td>
 												<td><?= $r['nama_barang'];?></td>
 												<td><?= $r['nama_supplier'];?></td>
-												<td><?= $r['tgl_pembelian'];?></td>
+												<td><?= isset($r['tgl_pembelian']) ? $r['tgl_pembelian'] : '-'; ?></td>
 												<td><?= $r['kode_pembelian'];?></td>
 												<td><?= $r['jumlah_barang'];?></td>
 												<td><?= $r['harga_total'];?></td>
 												<td><?= $r['status_pembayaran'];?></td>
 												<td>
-
 													<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $r['id_pembelian'];?>"><i class="fi fi-rr-edit p-2"></i>Ubah</button>
-
-
 													<div class="modal fade" id="exampleModal2<?php echo $r['id_pembelian'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 														<div class="modal-dialog modal-dialog modal-fullscreen-md-down">
 															<div class="modal-content">
@@ -127,38 +124,10 @@
 																</div>
 																<div class="modal-body">
 																	<form method="POST" action="<?=base_url('Pembelian/update_pembelian'); ?>"enctype="multipart/form-data">
-																		<input type="hidden" name="id_pembelian" value="<?= $r['id_pembelian']; ?>"> 
-
+																		<input type="hidden" name="id_pembelian" value="<?= $r['id_pembelian']; ?>">          
+																		
 																		<div class="form-group">
-																			<label for="nama_barang">Nama Barang</label>
-																			<select name="barang" id="" class="form-control">
-																				<option>- Pilih Barang -</option>
-																				<?php foreach($barang as $r){ ?>
-																					if($r['id_barang'] == $edit['id_barang']){
-																						$aktif = "selected";
-																					}else{
-																						$aktif = "";
-																					}
-																					<option value="<?= $r['id_barang'];?>"<?= $aktif;?>><?= $r['nama_barang'];?></option>
-																				<?php } ?>
-																			</select>
-																		</div> 
-																		<div class="form-group">
-																			<label for="nama_barang">Nama Supplier</label>
-																			<select name="supplier" id="" class="form-control">
-																				<option>- Pilih Supplier -</option>
-																				<?php foreach($supplier as $r){ ?>
-																					if($r['id_supplier'] == $edit['id_supplier']){
-																						$aktif = "selected";
-																					}else{
-																						$aktif = "";
-																					}
-																					<option value="<?= $r['id_supplier'];?>"<?= $aktif;?>><?= $r['nama_supplier'];?></option>
-																				<?php } ?>
-																			</select>
-																		</div>       
-																		<div class="form-group">
-																			<label for="">Tanggal pembelian</label>
+																			<label for="">Tanggal Pembelian</label>
 																			<input type="date" name="tgl_pembelian" value="<?= $r['tgl_pembelian']; ?>" class="form-control">
 																		</div>
 																		<div class="form-group">
@@ -175,9 +144,10 @@
 																		</div>
 																		<div class="form-group">
 																			<label for="">Status Pembayaran</label>
-																			<select class="form-select" aria-label="Default select example" name="status_pembayaran">
-																				<option value="aktif <?= ($r['status_pembayaran'] == 'dibayar') ? 'selected' : ''; ?>">dibayar</option>
-																				<option value="aktif <?= ($r['status_pembayaran'] == 'ditunda') ? 'selected' : ''; ?>">ditunda</option>
+																			<select class="form-select" aria-label="Default select example" name="status_pembayaran" required>
+																				<option selected><?= $r['status_pembayaran'];?></option>
+																				<option name="dibayar" value="<?= $r['status_pembayaran']?>">dibayar</option>
+																				<option name="ditunda" value="<?= $r['status_pembayaran']?>">ditunda</option>					
 																			</select>
 																		</div>
 																		<div class="modal-footer">
@@ -189,7 +159,7 @@
 															</div>
 														</div>
 													</div>
-													<a href="<?=base_url().'Pembelian/hapus_pembelian/'.$r['id_pembelian']; ?>" type="button" class="btn btn-danger" onclick="return confirm('yakin ingin menghapus?');"><i class="fi fi-rr-trash p-2"></i>hapus</a>                  
+													<a href="<?=base_url().'Pembelian/hapus_pembelian/'.$r['id_pembelian']; ?>" type="button" class="btn btn-danger" onclick="return confirm('yakin ingin menghapus?');"><i class="fi fi-rr-trash p-2"></i>hapus</a>        
 												</td>                     
 											</tr>
 											<?php $no++;} ?>  

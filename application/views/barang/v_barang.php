@@ -50,13 +50,25 @@
 												<input type="text" name="stok_tersedia" class="form-control" required>
 											</div>
 											<div class="form-group">
-												<label for="">satuan</label>
-												<select class="form-select" aria-label="Default select example" name="satuan" required>
-													<option selected>Pilih Satuan</option>
-													<option value="pcs" >pcs</option>
-													<option value="kg" >kg</option>
-													<option value="liter" >liter</option>            
-												</select>
+												<label>Satuan</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="satuan"  value="pcs" checked>
+												<label class="form-check-label" for="exampleRadios1">
+													Pcs
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="satuan"  value="kg">
+												<label class="form-check-label" for="exampleRadios2">
+													Kg
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="satuan"  value="liter">
+												<label class="form-check-label" for="exampleRadios2">
+													Liter
+												</label>
 											</div>
 											<div class="form-group">
 												<label for="">harga</label>

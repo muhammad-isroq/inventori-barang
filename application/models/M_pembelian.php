@@ -17,15 +17,15 @@ class M_Pembelian extends CI_Model {
             return $query;
 	}
 
-    function Insert_data($data){
+    function insert_data($data){
         return $this->db->insert('pembelian',$data);
     }
 
-    function Edit_data($where){
+    function edit_data($where){
         return $this->db->get_where('pembelian',$where);
     }
 
-    function Update_data($data, $where){
+    function update_data($data, $where){
         $this->db->where($where);
         $this->db->update('pembelian',$data);
     }
