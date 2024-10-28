@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>data barang</title>
+	<title>Data Barang</title>
 	<link rel="icon" href="<?= base_url();?>/assets/logo-login.png" type="image">
 	<link rel="stylesheet" href="<?= base_url('node_modules/bootstrap/dist/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -139,9 +139,9 @@
 																		<div class="form-group">
 																			<label for="">Satuan</label>
 																			<select class="form-select" aria-label="Default select example" name="satuan">
-																				<option value="aktif <?= ($r['satuan'] == 'pcs') ? 'selected' : ''; ?>">Pcs</option>
-																				<option value="aktif <?= ($r['satuan'] == 'kg') ? 'selected' : ''; ?>">Kg</option>
-																				<option value="aktif <?= ($r['satuan'] == 'liter') ? 'selected' : ''; ?>">Liter</option>
+																				<option value="aktif <?= ($r['satuan'] == 'pcs') ? 'selected' : 'pcs'; ?>">Pcs</option>
+																				<option value="aktif <?= ($r['satuan'] == 'kg') ? 'selected' : 'kg'; ?>">Kg</option>
+																				<option value="aktif <?= ($r['satuan'] == 'liter') ? 'selected' : 'liter'; ?>">Liter</option>
 																			</select>
 																		</div>
 																		<div class="form-group">
