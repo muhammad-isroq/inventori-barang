@@ -2,89 +2,50 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pembelian extends CI_Controller {
-    function __construct(){  
+
+    public function __construct() {
         parent::__construct();
-
-        if(empty($this->session->userdata('login'))){
-            redirect('Auth');
-        }
         $this->load->model('M_pembelian');
-        $this->load->model('M_barang');
-        $this->load->model('M_supplier');
-        $this->load->model('M_user');
     }
 
-    public function index()
-    {
-        $data['pembelian'] = $this->M_pembelian->tampil_data()->result_array();
-        
-        $data['barang'] = $this->M_barang->tampil_data()->result_array();
-        $data['supplier'] = $this->M_supplier->tampil_data()->result_array();
-
-        $this->load->view('v_header', $data);
+    public function index() {
+        $data['pembelian'] = $this->M_pembelian->getAllPembelian();
+        $data['barang'] = $this->M_pembelian->getBarang();
+        $data['supplier'] = $this->M_pembelian->getSupplier();
+        $data['pembelian'] = $this->M_pembelian->getAllPembelian();
         $this->load->view('pembelian/v_pembelian', $data);
-        $this->load->view('v_footer'); 
     }
+
+    public function simpan() {
+    $data = [
+        'id_barang' => $this->input->post('id_barang'),
+        'id_supplier' => $this->input->post('id_supplier'),
+        'tgl_pembelian' => $this->input->post('tgl_pembelian'),
+        'kode_pembelian' => $this->input->post('kode_pembelian'),
+        'jumlah_barang' => $this->input->post('jumlah_barang'),
+        'harga_total' => $this->input->post('harga_total'),
+        'status_pembayaran' => $this->input->post('status_pembayaran')
+    ];
     
-    public function insert_pembelian()
-    {
-        $c = $this->input->POST('barang');
-        $n = $this->input->POST('supplier');
-        $z = $this->input->POST('tgl_pembelian');
-        $x = $this->input->POST('kode_pembelian');
-        $v = $this->input->POST('jumlah_barang');
-        $b = $this->input->POST('harga_total');
-        $m = $this->input->POST('status_pembayaran');
-        
-        $data = array(
-            'id_barang' => $c,
-            'id_supplier' => $n,
-            'tgl_pembelian' => $z,
-            'kode_pembelian' => $x,
-            'jumlah_barang' => $v,
-            'harga_total' => $b,
-            'status_pembayaran' => $m
-        );
-        
-        $this->M_pembelian->insert_data($data);
-        $this->session->set_flashdata('success','data berhasil di tambah');
-
-        redirect('Pembelian');
-    }
-
-    public function update_pembelian()
-    {
-        $id = $this->input->POST('id_pembelian');
-        $c = $this->input->POST('barang');
-        $n = $this->input->POST('supplier');
-        $z = $this->input->POST('tgl_pembelian');
-        $x = $this->input->POST('kode_pembelian');
-        $v = $this->input->POST('jumlah_barang');
-        $b = $this->input->POST('harga_total');
-        $m = $this->input->POST('status_pembayaran');
-
-        $data = array(
-            'id_barang' => $c,
-            'id_supplier' => $n,
-            'tgl_pembelian' => $z,
-            'kode_pembelian' => $x,
-            'jumlah_barang' => $v,
-            'harga_total' => $b,
-            'status_pembayaran' => $m
-        );
-
-        $where = array('id_pembelian' => $id);
-        $this->M_pembelian->update_data($data, $where);
-        $this->session->set_flashdata('edit','data berhasil di update');
-        redirect('Pembelian');    
-    }
-
-    public function hapus_pembelian($id)
-    {
-        $where = array('id_pembelian' => $id);
-        $this->M_pembelian->hapus_data($where);
-        $this->session->set_flashdata('delete','data berhasil di update');
-        redirect('Pembelian');
-    }
+    $this->M_pembelian->insertPembelian($data);
+    redirect('pembelian');
 }
 
+public function update() {
+    $id = $this->input->post('id_pembelian');
+    $data = [
+        'id_barang' => $this->input->post('id_barang'),
+        'id_supplier' => $this->input->post('id_supplier'),
+        'tgl_pembelian' => $this->input->post('tgl_pembelian'),
+        'kode_pembelian' => $this->input->post('kode_pembelian'),
+        'jumlah_barang' => $this->input->post('jumlah_barang'),
+        'harga_total' => $this->input->post('harga_total'),
+        'status_pembayaran' => $this->input->post('status_pembayaran')
+    ];
+    
+    $this->M_pembelian->updatePembelian($id, $data);
+    redirect('pembelian');
+}
+
+
+}

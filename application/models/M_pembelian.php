@@ -1,63 +1,31 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_Pembelian extends CI_Model {
+class M_pembelian extends CI_Model {
 
-	function tampil_data(){
-		//return $this->db->get('pembelian');
-
-        $query = $this->db->query("SELECT pembelian.*,
-                            barang.nama_barang,                                                        
-                            supplier.nama_supplier
-                        FROM pembelian
-                        INNER JOIN barang ON barang.id_barang = pembelian.id_barang
-                        INNER JOIN supplier ON supplier.id_supplier = pembelian.id_supplier
-                        ");
-
-            return $query;
-	}
-
-    function insert_data($data){
-        return $this->db->insert('pembelian',$data);
+    public function getBarang() {
+        return $this->db->get('barang')->result();
     }
 
-    function edit_data($where){
-        return $this->db->get_where('pembelian',$where);
+    public function getSupplier() {
+        return $this->db->get('supplier')->result();
     }
 
-    function update_data($data, $where){
-        $this->db->where($where);
-        $this->db->update('pembelian',$data);
+    public function insertPembelian($data) {
+        return $this->db->insert('pembelian', $data);
     }
 
-    function hapus_data($where){
-        $this->db->where($where);
-        $this->db->delete('pembelian');
+    public function getAllPembelian() {
+        $this->db->select('pembelian.*, barang.nama_barang, supplier.nama_supplier');
+        $this->db->from('pembelian');
+        $this->db->join('barang', 'pembelian.id_barang = barang.id_barang');
+        $this->db->join('supplier', 'pembelian.id_supplier = supplier.id_supplier');
+        return $this->db->get()->result();
     }
 
-    function tampil_rm($id){
-      $query = $this->db->query("SELECT pembelian.*,
-                            barang.nama_barang,                            
-                            supplier.nama_supplier
-                        FROM pembelian
-                        INNER JOIN barang ON barang.id_barang = pembelian.id_barang
-                        INNER JOIN supplier ON supplier.id_supplier = pembelian.id_supplier
-                        WHERE pembelian.id_pembelian = '$id'
-                        ");
+    public function updatePembelian($id, $data) {
+    $this->db->where('id_pembelian', $id);
+    return $this->db->update('pembelian', $data);
+}
 
-            return $query;  
-    }
-
-    function tampil_riwayat($id){
-        $query = $this->db->query("SELECT pembelian.*,
-                            barang.nama_barang,                            
-                            supplier.nama_supplier
-                        FROM pembelian
-                        INNER JOIN barang ON barang.id_barang = pembelian.id_barang
-                        INNER JOIN supplier ON supplier.id_supplier = pembelian.id_supplier
-                        WHERE pembelian.id_barang = '$id'
-                        ");
-
-            return $query;  
-    }
 }

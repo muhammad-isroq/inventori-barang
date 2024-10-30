@@ -149,12 +149,25 @@
 																			<input type="text" name="stok_tersedia" value="<?= $r['stok_tersedia']; ?>" class="form-control">                        
 																		</div>
 																		<div class="form-group">
-																			<label for="">Satuan</label>
-																			<select class="form-select" aria-label="Default select example" name="satuan">
-																				<option value="aktif <?= ($r['satuan'] == 'pcs') ? 'selected' : 'pcs'; ?>">Pcs</option>
-																				<option value="aktif <?= ($r['satuan'] == 'kg') ? 'selected' : 'kg'; ?>">Kg</option>
-																				<option value="aktif <?= ($r['satuan'] == 'liter') ? 'selected' : 'liter'; ?>">Liter</option>
-																			</select>
+																			<label>Satuan</label>
+																		</div>
+																		<div class="form-check">
+																			<input class="form-check-input" type="radio" name="satuan"  value="pcs" checked>
+																			<label class="form-check-label" for="exampleRadios1">
+																				Pcs
+																			</label>
+																		</div>
+																		<div class="form-check">
+																			<input class="form-check-input" type="radio" name="satuan"  value="kg">
+																			<label class="form-check-label" for="exampleRadios2">
+																				Kg
+																			</label>
+																		</div>
+																		<div class="form-check">
+																			<input class="form-check-input" type="radio" name="satuan"  value="liter">
+																			<label class="form-check-label" for="exampleRadios2">
+																				Liter
+																			</label>
 																		</div>
 																		<div class="form-group">
 																			<label for="">Harga</label>
