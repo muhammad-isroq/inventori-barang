@@ -161,7 +161,7 @@
             <!-- Tanggal Pembelian -->
             <div class="mb-3">
               <label for="tgl_pembelian" class="form-label">Tanggal Pembelian</label>
-              <input type="date" name="tgl_pembelian" id="tgl_pembelian" class="form-control" >
+              <input type="date" name="tgl_pembelian"  id="tgl_pembelian" class="form-control" >
             </div>
 
             <!-- Kode Pembelian -->

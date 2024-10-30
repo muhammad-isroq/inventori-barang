@@ -2,16 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pembelian extends CI_Controller {
-function __construct(){  
-        parent::__construct();
 
-        if(empty($this->session->userdata('login'))){
-            redirect('Auth');
-        }
+    public function __construct() {
+        parent::__construct();
         $this->load->model('M_pembelian');
-        $this->load->model('M_barang');
-        $this->load->model('M_supplier');
-        $this->load->model('M_user');
     }
 
     public function index() {
