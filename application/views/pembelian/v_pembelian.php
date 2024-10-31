@@ -38,7 +38,8 @@
             <td><?= $p->status_pembayaran ?></td>
             <td>
               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEdit"
-              onclick="editModal('<?= $p->id_pembelian ?>', '<?= $p->id_barang ?>', '<?= $p->id_supplier ?>', '<?= $p->tgl_pembelian ?>', '<?= $p->kode_pembelian ?>', '<?= $p->jumlah_barang ?>', '<?= $p->harga_total ?>', '<?= $p->status_pembayaran ?>')">Edit</button>
+              onclick="editModal('<?= $p->id_pembelian ?>', '<?= $p->id_barang ?>', '<?= $p->id_supplier ?>', '<?= $p->tgl_pembelian ?>', '<?= $p->kode_pembelian ?>', '<?= $p->jumlah_barang ?>', '<?= $p->harga_total ?>', '<?= $p->status_pembayaran ?>')">Edit</button><br>
+              <a href="<?=base_url().'pembelian/hapus/'.$p->id_pembelian ?>" type="button" class="btn btn-danger" onclick="return confirm('yakin ingin menghapus?');">hapus</a>
             </td>
           </tr>
         <?php endforeach; ?>

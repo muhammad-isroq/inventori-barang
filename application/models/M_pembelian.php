@@ -24,8 +24,14 @@ class M_pembelian extends CI_Model {
     }
 
     public function updatePembelian($id, $data) {
-    $this->db->where('id_pembelian', $id);
-    return $this->db->update('pembelian', $data);
-}
+        $this->db->where('id_pembelian', $id);
+        return $this->db->update('pembelian', $data);
+    }
+
+    function hapus_data($where){
+        $this->db->where($where);
+        $this->db->delete('pembelian');
+
+    } 
 
 }

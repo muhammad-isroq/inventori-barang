@@ -17,35 +17,41 @@ class Pembelian extends CI_Controller {
     }
 
     public function simpan() {
-    $data = [
-        'id_barang' => $this->input->post('id_barang'),
-        'id_supplier' => $this->input->post('id_supplier'),
-        'tgl_pembelian' => $this->input->post('tgl_pembelian'),
-        'kode_pembelian' => $this->input->post('kode_pembelian'),
-        'jumlah_barang' => $this->input->post('jumlah_barang'),
-        'harga_total' => $this->input->post('harga_total'),
-        'status_pembayaran' => $this->input->post('status_pembayaran')
-    ];
-    
-    $this->M_pembelian->insertPembelian($data);
-    redirect('pembelian');
-}
+        $data = [
+            'id_barang' => $this->input->post('id_barang'),
+            'id_supplier' => $this->input->post('id_supplier'),
+            'tgl_pembelian' => $this->input->post('tgl_pembelian'),
+            'kode_pembelian' => $this->input->post('kode_pembelian'),
+            'jumlah_barang' => $this->input->post('jumlah_barang'),
+            'harga_total' => $this->input->post('harga_total'),
+            'status_pembayaran' => $this->input->post('status_pembayaran')
+        ];
 
-public function update() {
-    $id = $this->input->post('id_pembelian');
-    $data = [
-        'id_barang' => $this->input->post('id_barang'),
-        'id_supplier' => $this->input->post('id_supplier'),
-        'tgl_pembelian' => $this->input->post('tgl_pembelian'),
-        'kode_pembelian' => $this->input->post('kode_pembelian'),
-        'jumlah_barang' => $this->input->post('jumlah_barang'),
-        'harga_total' => $this->input->post('harga_total'),
-        'status_pembayaran' => $this->input->post('status_pembayaran')
-    ];
-    
-    $this->M_pembelian->updatePembelian($id, $data);
-    redirect('pembelian');
-}
+        $this->M_pembelian->insertPembelian($data);
+        redirect('pembelian');
+    }
 
+    public function update() {
+        $id = $this->input->post('id_pembelian');
+        $data = [
+            'id_barang' => $this->input->post('id_barang'),
+            'id_supplier' => $this->input->post('id_supplier'),
+            'tgl_pembelian' => $this->input->post('tgl_pembelian'),
+            'kode_pembelian' => $this->input->post('kode_pembelian'),
+            'jumlah_barang' => $this->input->post('jumlah_barang'),
+            'harga_total' => $this->input->post('harga_total'),
+            'status_pembayaran' => $this->input->post('status_pembayaran')
+        ];
+
+        $this->M_pembelian->updatePembelian($id, $data);
+        redirect('pembelian');
+    }
+
+    public function hapus($id){
+        $where = array('id_pembelian' => $id);
+        $this->M_pembelian->hapus_data($where);
+        $this->session->set_flashdata('delete', 'data berhasil dihapus');
+        redirect('Pembelian');
+    }
 
 }

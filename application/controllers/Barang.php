@@ -82,7 +82,7 @@ class Barang extends CI_Controller {
     {
         $where = array('id_barang' => $id);
         $this->M_barang->hapus_data($where);
-        $this->session->set_flashdata('delete','data berhasil di update');
+        $this->session->set_flashdata('delete','data berhasil di hapus');
         redirect('Barang');
     }
 }
