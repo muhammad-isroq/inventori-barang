@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Pembelian</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Data Pembelian</title>
+	<link rel="icon" href="<?= base_url();?>/assets/logo-login.png" type="image">
+	<link rel="stylesheet" href="<?= base_url('node_modules/bootstrap/dist/css/bootstrap.min.css'); ?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link rel="stylesheet" href="<?= base_url('node_modules/aos/dist/aos.css'); ?>">
 </head>
 <body>
   <div class="container mt-4">
@@ -14,15 +17,15 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>No</th>
-          <th>Nama Barang</th>
-          <th>Nama Supplier</th>
-          <th>Tanggal Pembelian</th>
-          <th>Kode Pembelian</th>
-          <th>Jumlah Barang</th>
-          <th>Harga Total</th>
-          <th>Status Pembayaran</th>
-          <th>Aksi</th>
+          <th scope="col">No</th>
+          <th scope="col">Nama Barang</th>
+          <th scope="col">Nama Supplier</th>
+          <th scope="col">Tanggal Pembelian</th>
+          <th scope="col">Kode Pembelian</th>
+          <th scope="col">Jumlah Barang</th>
+          <th scope="col">Harga Total</th>
+          <th scope="col">Status Pembayaran</th>
+          <th scope="col" colspan="2" class="text-center">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -37,10 +40,10 @@
             <td><?= $p->harga_total ?></td>
             <td><?= $p->status_pembayaran ?></td>
             <td>
-              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEdit"
+              <button type="button" class="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#modalEdit"
               onclick="editModal('<?= $p->id_pembelian ?>', '<?= $p->id_barang ?>', '<?= $p->id_supplier ?>', '<?= $p->tgl_pembelian ?>', '<?= $p->kode_pembelian ?>', '<?= $p->jumlah_barang ?>', '<?= $p->harga_total ?>', '<?= $p->status_pembayaran ?>')">Edit</button><br>
-              <a href="<?=base_url().'pembelian/hapus/'.$p->id_pembelian ?>" type="button" class="btn btn-danger" onclick="return confirm('yakin ingin menghapus?');">hapus</a>
             </td>
+            <td><a href="<?=base_url().'pembelian/hapus/'.$p->id_pembelian ?>" type="button" class="btn btn-danger m-2" onclick="return confirm('yakin ingin menghapus?');">hapus</a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
@@ -229,6 +232,6 @@
 
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
 </body>
 </html>
