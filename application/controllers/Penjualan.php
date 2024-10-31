@@ -24,22 +24,22 @@ class Penjualan extends CI_Controller {
     public function insert_penjualan()
     {
 
-        $z = $this->input->POST('nama_penjualan');
+        $z = $this->input->POST('tanggal_penjualan');
         $x = $this->input->POST('kode_penjualan');
-        $c = $this->input->POST('deskripsi_penjualan');
-        $v = $this->input->POST('kategori_penjualan');
-        $b = $this->input->POST('stok_tersedia');
-        $n = $this->input->POST('satuan');
-        $m = $this->input->POST('harga');
+        $c = $this->input->POST('nama_barang_dijual');
+        $v = $this->input->POST('jumlah_barang_dijual');
+        $b = $this->input->POST('harga_total_penjualan');
+        $n = $this->input->POST('nama_pelanggan');
+        $m = $this->input->POST('status_pengiriman');
         
         $data = array(
-            'nama_penjualan' => $z,
+            'tanggal_penjualan' => $z,
             'kode_penjualan' => $x,
-            'deskripsi_penjualan' => $c,
-            'kategori_penjualan' => $v,
-            'stok_tersedia' => $b,
-            'satuan' => $n,
-            'harga' => $m,
+            'nama_barang_dijual' => $c,
+            'jumlah_barang_dijual' => $v,
+            'harga_total_penjualan' => $b,
+            'nama_pelanggan' => $n,
+            'status_pengiriman' => $m,
         );
         
 
@@ -52,23 +52,23 @@ class Penjualan extends CI_Controller {
     public function update_penjualan()
     {
         $id = $this->input->POST('id_penjualan');
-        $z = $this->input->POST('nama_penjualan');
+        $z = $this->input->POST('tanggal_penjualan');
         $x = $this->input->POST('kode_penjualan');
-        $c = $this->input->POST('deskripsi_penjualan');
-        $v = $this->input->POST('kategori_penjualan');
-        $b = $this->input->POST('stok_tersedia');
-        $n = $this->input->POST('satuan');
-        $m = $this->input->POST('harga');
+        $c = $this->input->POST('nama_barang_dijual');
+        $v = $this->input->POST('jumlah_barang_dijual');
+        $b = $this->input->POST('harga_total_penjualan');
+        $n = $this->input->POST('nama_pelanggan');
+        $m = $this->input->POST('status_pengiriman');
 
 
         $data = array(
-            'nama_penjualan' => $z,
+            'tanggal_penjualan' => $z,
             'kode_penjualan' => $x,
-            'deskripsi_penjualan' => $c,
-            'kategori_penjualan' => $v,
-            'stok_tersedia' => $b,
-            'satuan' => $n,
-            'harga' => $m,
+            'nama_barang_dijual' => $c,
+            'jumlah_barang_dijual' => $v,
+            'harga_total_penjualan' => $b,
+            'nama_pelanggan' => $n,
+            'status_pengiriman' => $m,
         );
 
 

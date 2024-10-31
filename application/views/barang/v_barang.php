@@ -11,7 +11,7 @@
 </head>
 <body>
 	<section class="content m-2">
-		<div class="container-fluid">
+		<div class="container mt-4">
 			<div class="row">
 				<div class="card">
 					<div class="card-header bg-primary">
@@ -100,6 +100,7 @@
 											<th scope="col">Stok Tersedia</th>
 											<th scope="col">Satuan</th>
 											<th scope="col">Harga</th>
+											<th scope="col" colspan="2" class="text-center">aksi</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -115,7 +116,7 @@
 												<td><?= $r['harga'];?></td>            
 												<td>
 
-													<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $r['id_barang'];?>"><i class="fi fi-rr-edit p-2"></i>Ubah</button>
+													<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $r['id_barang'];?>">Ubah</button>
 
 
 													<div class="modal fade" id="exampleModal2<?php echo $r['id_barang'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -182,8 +183,10 @@
 															</div>
 														</div>
 													</div>
-													<a href="<?=base_url().'Barang/hapus_barang/'.$r['id_barang']; ?>" type="button" class="btn btn-danger" onclick="return confirm('yakin ingin menghapus?');"><i class="fi fi-rr-trash p-2"></i>hapus</a>                  
-												</td>                     
+												</td>     
+												<td>
+													<a href="<?=base_url().'Barang/hapus_barang/'.$r['id_barang']; ?>" type="button" class="btn btn-danger" onclick="return confirm('yakin ingin menghapus?');">hapus</a>   
+												</td>                
 											</tr>
 											<?php $no++;} ?>  
 										</tbody>

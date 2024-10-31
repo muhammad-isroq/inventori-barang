@@ -14,7 +14,7 @@
     <h3>Data Pembelian</h3>
     <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalTambah" onclick="resetModal()">Tambah Pembelian</button>
 
-    <table class="table table-bordered">
+    <table class="table table-stripped">
       <thead>
         <tr>
           <th scope="col">No</th>
