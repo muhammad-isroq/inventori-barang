@@ -133,13 +133,13 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <input type="hidden" name="id_pembelian" id="id_pembelian">
+            <input type="hidden" name="id_pembelian" id="id_pembelian_edit">
 
 
             <!-- Nama Barang -->
             <div class="mb-3">
               <label for="id_barang" class="form-label">Nama Barang</label>
-              <select name="id_barang" id="id_barang" class="form-control" >
+              <select name="id_barang" id="id_barang_edit" class="form-control" >
                 <option value="" disabled selected>Pilih Barang</option>
                 <?php foreach ($barang as $b): ?>
                   <option value="<?= $b->id_barang ?>"><?= $b->nama_barang ?></option>
@@ -150,7 +150,7 @@
             <!-- Nama Supplier -->
             <div class="mb-3">
               <label for="id_supplier" class="form-label">Nama Supplier</label>
-              <select name="id_supplier" id="id_supplier" class="form-control" >
+              <select name="id_supplier" id="id_supplier_edit" class="form-control" >
                 <option value="" disabled selected>Pilih Supplier</option>
                 <?php foreach ($supplier as $s): ?>
                   <option value="<?= $s->id_supplier ?>"><?= $s->nama_supplier ?></option>
@@ -161,25 +161,25 @@
             <!-- Tanggal Pembelian -->
             <div class="mb-3">
               <label for="tgl_pembelian" class="form-label">Tanggal Pembelian</label>
-              <input type="date" name="tgl_pembelian"  id="tgl_pembelian" class="form-control" >
+              <input type="date" name="tgl_pembelian"  id="tgl_pembelian_edit" class="form-control" >
             </div>
 
             <!-- Kode Pembelian -->
             <div class="mb-3">
               <label for="kode_pembelian" class="form-label">Kode Pembelian</label>
-              <input type="text" name="kode_pembelian" id="kode_pembelian" class="form-control" >
+              <input type="text" name="kode_pembelian" id="kode_pembelian_edit" class="form-control" >
             </div>
 
             <!-- Jumlah Barang -->
             <div class="mb-3">
               <label for="jumlah_barang" class="form-label">Jumlah Barang</label>
-              <input type="number" name="jumlah_barang" id="jumlah_barang" class="form-control" >
+              <input type="number" name="jumlah_barang" id="jumlah_barang_edit" class="form-control" >
             </div>
 
             <!-- Harga Total -->
             <div class="mb-3">
               <label for="harga_total" class="form-label">Harga Total</label>
-              <input type="number" name="harga_total" id="harga_total" class="form-control" >
+              <input type="number" name="harga_total" id="harga_total_edit" class="form-control" >
             </div>
 
             <!-- Status Pembayaran -->
@@ -212,13 +212,13 @@
 
 
     function editModal(id, id_barang, id_supplier, tgl_pembelian, kode_pembelian, jumlah_barang, harga_total, status_pembayaran) {
-      document.getElementById('id_pembelian').value = id;
-      document.getElementById('id_barang').value = id_barang;
-      document.getElementById('id_supplier').value = id_supplier;
-      document.getElementById('tgl_pembelian').value = tgl_pembelian;
-      document.getElementById('kode_pembelian').value = kode_pembelian;
-      document.getElementById('jumlah_barang').value = jumlah_barang;
-      document.getElementById('harga_total').value = harga_total;
+      document.getElementById('id_pembelian_edit').value = id;
+      document.getElementById('id_barang_edit').value = id_barang;
+      document.getElementById('id_supplier_edit').value = id_supplier;
+      document.getElementById('tgl_pembelian_edit').value = tgl_pembelian;
+      document.getElementById('kode_pembelian_edit').value = kode_pembelian;
+      document.getElementById('jumlah_barang_edit').value = jumlah_barang;
+      document.getElementById('harga_total_edit').value = harga_total;
       document.getElementById('status_pembayaran').value = status_pembayaran;
 
     // Mengubah teks modal dan URL action untuk update
