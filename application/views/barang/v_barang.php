@@ -47,7 +47,7 @@
 											</div>
 											<div class="form-group">
 												<label for="">Stok Tersedia</label>
-												<input type="text" name="stok_tersedia" class="form-control" required>
+												<input type="number" name="stok_tersedia" class="form-control" required>
 											</div>
 											<div class="form-group">
 												<label>Satuan</label>
@@ -147,7 +147,7 @@
 																		</div>
 																		<div class="form-group">
 																			<label for="">Stok Tersedia</label>
-																			<input type="text" name="stok_tersedia" value="<?= $r['stok_tersedia']; ?>" class="form-control">                        
+																			<input type="number" name="stok_tersedia" value="<?= $r['stok_tersedia']; ?>" class="form-control">                        
 																		</div>
 																		<div class="form-group">
 																			<label>Satuan</label>

@@ -43,7 +43,7 @@
 											</div>
 											<div class="form-group">
 												<label for="">Jumlah Barang Dijual</label>
-												<input type="text" name="jumlah_barang_dijual" class="form-control" required>
+												<input type="number" name="jumlah_barang_dijual" class="form-control" required>
 											</div>
 											<div class="form-group">
 												<label for="">Harga Total Penjualan</label>
@@ -142,7 +142,7 @@
 																	</div>
 																	<div class="form-group">
 																		<label for="">Jumlah Barang Dijual</label>
-																		<input type="text" name="jumlah_barang_dijual" value="<?= $r['jumlah_barang_dijual']; ?>" class="form-control">
+																		<input type="number" name="jumlah_barang_dijual" value="<?= $r['jumlah_barang_dijual']; ?>" class="form-control">
 																	</div>
 																	<div class="form-group">
 																		<label for="">Harga Total Penjualan</label>

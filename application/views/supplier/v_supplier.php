@@ -35,7 +35,7 @@
 											</div>
 											<div class="form-group">
 												<label for="">kontak Supplier</label>
-												<input type="text" name="kontak_supplier" class="form-control" required>
+												<input type="number" name="kontak_supplier" class="form-control" required>
 											</div>
 											<div class="form-group">
 												<label for="">alamat Supplier</label>
@@ -104,7 +104,7 @@
 																	</div>
 																	<div class="form-group">
 																		<label for="">kontak Supplier</label>
-																		<input type="text" name="kontak_supplier" value="<?= $r['kontak_supplier']; ?>" class="form-control">
+																		<input type="number" name="kontak_supplier" value="<?= $r['kontak_supplier']; ?>" class="form-control">
 																	</div>
 																	<div class="form-group">
 																		<label for="">alamat Supplier</label>

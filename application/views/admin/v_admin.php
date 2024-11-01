@@ -49,6 +49,15 @@
 						</h5>
 					</div>
 				</div>
+			</div>
+			<div class="col-md m-3">
+				<div class="card">
+					<div class="card-body btn btn-success text-white ">
+						<h5>
+							<a href="<?= base_url('stok');?>" class="link-light link-offset-2 link-underline link-underline-opacity-0">Data Stok Barang</a>
+						</h5>
+					</div>
+				</div>
 			</div>			
 		</div>
 	</div>

@@ -45,9 +45,10 @@
                 <div class="bg-light fw-bold rounded fs-6 shadow bg-body-tertiary rounded" id="sistem">
                     <img class="m-3" src="<?=base_url();?>/assets/logo-sistem.png" alt="" width="50" height="50">Sistem Inventori Barang
                 </div>
-                <br>
+                <br>                
                 <form class="form-signin bg-body rounded form-lg shadow bg-body-tertiary rounded" method="POST" action="<?= base_url('Auth/login');?>"
                     >
+                    <h4 class="m-3">Selamat datang kembali</h4>
                     <img class="mb-4 animate__animated animate__flip animate__infinite infinite" src="<?=base_url();?>/assets/logo-login.png" alt="" width="100" height="100" >
                     <h1 class="h3 mb-3 font-weight-normal">Log In</h1>    
 
