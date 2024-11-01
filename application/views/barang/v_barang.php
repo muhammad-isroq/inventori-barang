@@ -199,6 +199,11 @@
 			</div>
 		</section>
 
+
+		<script src="<?= base_url('node_modules/aos/dist/aos.js'); ?>"></script>
+		<script>
+			AOS.init();
+		</script>
 		<script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
 	</body>
 	</html>
