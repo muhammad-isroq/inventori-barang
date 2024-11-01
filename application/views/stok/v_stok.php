@@ -14,6 +14,8 @@
     <h3>Data Stok Barang</h3>
     <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalTambah" onclick="resetModal()">Tambah Stok Barang</button>
 
+    <a href="<?= base_url('Stok/laporan')?>" class="btn btn-dark mb-3">Laporan Stok Barang</a>
+
     <table class="table table-stripped">
       <thead>
         <tr>

@@ -20,6 +20,15 @@ class Barang extends CI_Controller {
         $this->load->view('barang/v_barang', $data);
         $this->load->view('v_footer'); 
     }
+
+    public function laporan()
+    {
+        $data['barang'] = $this->M_barang->tampil_data()->result_array();
+
+        $this->load->view('v_header', $data);
+        $this->load->view('barang/v_laporan', $data);
+        $this->load->view('v_footer'); 
+    }
     
     public function insert_barang()
     {
