@@ -16,11 +16,15 @@ class Stok extends CI_Controller {
     }
 
     public function simpan() {
+
+        $a = $this->input->post('jumlah_masuk');
+        $b = $this->input->post('jumlah_keluar');
+        $c= $a - $b;
         $data = [
             'id_barang' => $this->input->post('id_barang'),            
-            'jumlah_masuk' => $this->input->post('jumlah_masuk'),
-            'jumlah_keluar' => $this->input->post('jumlah_keluar'),
-            'sisa_stok' => $this->input->post('sisa_stok'),
+            'jumlah_masuk' => $a,
+            'jumlah_keluar' => $b,
+            'sisa_stok' => $c,
             'tgl_update_terakhir' => $this->input->post('tgl_update_terakhir'),            
         ];
 
@@ -30,11 +34,14 @@ class Stok extends CI_Controller {
 
     public function update() {
         $id = $this->input->post('id_stok');
+        $a = $this->input->post('jumlah_masuk');
+        $b = $this->input->post('jumlah_keluar');
+        $c= $a - $b;
         $data = [
             'id_barang' => $this->input->post('id_barang'),            
-            'jumlah_masuk' => $this->input->post('jumlah_masuk'),
-            'jumlah_keluar' => $this->input->post('jumlah_keluar'),
-            'sisa_stok' => $this->input->post('sisa_stok'),
+            'jumlah_masuk' => $a,
+            'jumlah_keluar' => $b,
+            'sisa_stok' => $c,
             'tgl_update_terakhir' => $this->input->post('tgl_update_terakhir'),            
         ];
 

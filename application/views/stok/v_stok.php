@@ -98,10 +98,10 @@
             </div>
 
             <!-- Sisa Stok -->
-            <div class="mb-3">
+<!--             <div class="mb-3">
               <label for="sisa_stok" class="form-label">Sisa Stok</label>
               <input type="number" name="sisa_stok" id="sisa_stok" class="form-control" required>
-            </div>
+            </div> -->
 
             <!-- Tanggal Update Terakhir -->
             <div class="mb-3">
@@ -167,10 +167,10 @@
             </div>
 
             <!-- Sisa Stok -->
-            <div class="mb-3">
+<!--             <div class="mb-3">
               <label for="sisa_stok" class="form-label">Sisa Stok</label>
               <input type="number" name="sisa_stok" id="sisa_stok_edit" class="form-control" >
-            </div>
+            </div> -->
 
             <!-- Tanggal Update Terakhir -->
             <div class="mb-3">
@@ -199,7 +199,7 @@
     }
 
 
-    function editModal(id, id_barang, id_barang, jumlah_masuk, jumlah_keluar, sisa_stok, tgl_update_terakhir, status_pembayaran) {
+    function editModal(id, id_barang, id_barang, jumlah_masuk, jumlah_keluar, sisa_stok, tgl_update_terakhir) {
       document.getElementById('id_stok_edit').value = id;
       document.getElementById('id_barang_edit').value = id_barang;
       document.getElementById('id_barang_edit').value = id_barang;
@@ -207,7 +207,7 @@
       document.getElementById('jumlah_keluar_edit').value = jumlah_keluar;
       document.getElementById('sisa_stok_edit').value = sisa_stok;
       document.getElementById('tgl_update_terakhir_edit').value = tgl_update_terakhir;
-      document.getElementById('status_pembayaran').value = status_pembayaran;
+     
 
     // Mengubah teks modal dan URL action untuk update
       document.getElementById('modalLabel').innerText = 'Edit Stok Barang';
