@@ -78,5 +78,13 @@ class Supplier extends CI_Controller {
         $this->session->set_flashdata('delete','data berhasil di update');
         redirect('Supplier');
     }
+
+    public function laporan(){
+        $data['supplier'] = $this->M_supplier->tampil_data()->result_array();
+
+        $this->load->view('v_header', $data);
+        $this->load->view('supplier/v_laporan', $data);
+        $this->load->view('v_footer'); 
+    }
 }
 

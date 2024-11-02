@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>data supplier</title>
+	<title>Data Supplier</title>
 	<link rel="icon" href="<?= base_url();?>/assets/logo-login.png" type="image">
 	<link rel="stylesheet" href="<?= base_url('node_modules/bootstrap/dist/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -16,9 +16,10 @@
 				<div class="card">
 					<div class="card-header bg-primary">
 						<h2 class="text-center text-light">Data Supplier</h2>
-						<button type="button" class="btn btn-light float-end" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+						<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal1">
 							tambah
 						</button>
+						<a href="<?= base_url('Supplier/laporan');?>" class="btn btn-warning">laporan</a>
 
 						<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 							<div class="modal-dialog modal-dialog modal-fullscreen-xxl-down">
