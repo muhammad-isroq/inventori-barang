@@ -56,9 +56,11 @@ class Stok extends CI_Controller {
         redirect('Stok');
     }
 
-    public function laporan(){        
+    public function laporanBulanan(){        
         $data['barang'] = $this->M_stok->getBarang();        
-        $data['stok'] = $this->M_stok->laporanOktober();
-        $this->load->view('stok/v_laporan', $data);
+        $data['stokOktober'] = $this->M_stok->laporanOktober();
+        $data['stokNovember'] = $this->M_stok->laporanNovember();
+        $this->load->view('stok/v_laporanBulanan', $data);
     }
+
 }

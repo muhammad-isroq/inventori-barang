@@ -22,7 +22,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Harian</a></li>
             <li><a class="dropdown-item" href="#">Mingguan</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('Stok/laporan')?>">Bulanan</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('Stok/laporanBulanan')?>">Bulanan</a></li>
           </ul>
         </div>
       </div>
