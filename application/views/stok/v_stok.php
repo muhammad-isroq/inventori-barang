@@ -174,7 +174,7 @@
 
             <!-- Tanggal Update Terakhir -->
             <div class="mb-3">
-              <label for="tgl_update_terakhir" class="form-label">Tanggal Update Terakhir</label>
+              <label for="tgl_update_terakhir_edit" class="form-label">Tanggal Update Terakhir</label>
               <input type="date" name="tgl_update_terakhir" id="tgl_update_terakhir_edit" class="form-control" >
             </div>
 
@@ -205,7 +205,7 @@
       document.getElementById('id_barang_edit').value = id_barang;
       document.getElementById('jumlah_masuk_edit').value = jumlah_masuk;
       document.getElementById('jumlah_keluar_edit').value = jumlah_keluar;
-      document.getElementById('sisa_stok_edit').value = sisa_stok;
+      // document.getElementById('sisa_stok_edit').value = sisa_stok;
       document.getElementById('tgl_update_terakhir_edit').value = tgl_update_terakhir;
      
 
