@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="container mt-4">
-    <h3>Laporan Stok Barang</h3>
+    <h3>Laporan Stok Barang Bulan Oktober</h3>
     <!-- <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalTambah" onclick="resetModal()">Tambah Stok Barang</button> -->
 
 

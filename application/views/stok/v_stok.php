@@ -12,9 +12,23 @@
 <body>
   <div class="container mt-4">
     <h3>Data Stok Barang</h3>
-    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalTambah" onclick="resetModal()">Tambah Stok Barang</button>
+    <div class="row-md">
+      <div class="col-md">
+        <div class="dropdown">
+          <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalTambah" onclick="resetModal()">Tambah Stok Barang</button>
+          <button class="btn btn-dark mb-3 dropdown-toggle float-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Laporan
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Harian</a></li>
+            <li><a class="dropdown-item" href="#">Mingguan</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('Stok/laporan')?>">Bulanan</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>    
 
-    <a href="<?= base_url('Stok/laporan')?>" class="btn btn-dark mb-3">Laporan Stok Barang</a>
+    <!-- <a href="<?= base_url('Stok/laporan')?>" class="btn btn-dark mb-3">Laporan Stok Barang</a> -->
 
     <table class="table table-stripped">
       <thead>
@@ -207,7 +221,7 @@
       document.getElementById('jumlah_keluar_edit').value = jumlah_keluar;
       // document.getElementById('sisa_stok_edit').value = sisa_stok;
       document.getElementById('tgl_update_terakhir_edit').value = tgl_update_terakhir;
-     
+
 
     // Mengubah teks modal dan URL action untuk update
       document.getElementById('modalLabel').innerText = 'Edit Stok Barang';
