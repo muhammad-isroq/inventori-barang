@@ -57,9 +57,19 @@ class Stok extends CI_Controller {
     }
 
     public function laporanBulanan(){        
-        $data['barang'] = $this->M_stok->getBarang();        
+        $data['barang'] = $this->M_stok->getBarang();
+        $data['stokJanuari'] = $this->M_stok->laporanJanuari();
+        $data['stokFebruari'] = $this->M_stok->laporanFebruari();
+        $data['stokMaret'] = $this->M_stok->laporanMaret();
+        $data['stokApril'] = $this->M_stok->laporanApril();
+        $data['stokMei'] = $this->M_stok->laporanMei();
+        $data['stokJuni'] = $this->M_stok->laporanJuni();
+        $data['stokJuli'] = $this->M_stok->laporanJuli();
+        $data['stokAgustus'] = $this->M_stok->laporanAgustus();
+        $data['stokSeptember'] = $this->M_stok->laporanSeptember();
         $data['stokOktober'] = $this->M_stok->laporanOktober();
         $data['stokNovember'] = $this->M_stok->laporanNovember();
+        $data['stokDesember'] = $this->M_stok->laporanDesember();
         $this->load->view('stok/v_laporanBulanan', $data);
     }
 
