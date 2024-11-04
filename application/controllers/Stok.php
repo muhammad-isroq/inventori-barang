@@ -12,6 +12,8 @@ class Stok extends CI_Controller {
         $data['stok'] = $this->M_stok->getAllstok();
         $data['barang'] = $this->M_stok->getBarang();        
         $data['stok'] = $this->M_stok->getAllstok();
+        $data['stokMingguan'] = $this->M_stok->laporanMingguan();
+        $data['stokHarian'] = $this->M_stok->laporanHarian();
         $this->load->view('stok/v_stok', $data);
     }
 

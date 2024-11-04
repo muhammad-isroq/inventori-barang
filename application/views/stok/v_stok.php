@@ -20,9 +20,11 @@
             Laporan
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Harian</a></li>
-            <li><a class="dropdown-item" href="#">Mingguan</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('Stok/laporanBulanan')?>">Bulanan</a></li>
+            <li><a class="dropdown-item" href="#" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalHarian">Harian</a></li>
+            <li><a class="dropdown-item" href="#" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalMingguan">
+          Mingguan
+            </a></li>
+            <li><a class="dropdown-item btn btn-primary" href="<?= base_url('Stok/laporanBulanan')?>">Bulanan</a></li>
           </ul>
         </div>
       </div>
@@ -203,7 +205,97 @@
   </div>
 
   
+<div class="modal fade" id="exampleModalMingguan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Laporan Mingguan Stok Barang</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
 
+        <table class="table table-stripped">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama Barang</th>
+              <th scope="col">Kode Barang</th>
+              <th scope="col">Jumlah Masuk</th>
+              <th scope="col">Jumlah Keluar</th>
+              <th scope="col">Sisa Stok</th>
+              <th scope="col">Tanggal Update Terakhir</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($stokMingguan as $i => $p): ?>
+              <tr>
+                <td><?= $i + 1 ?></td>
+                <td><?= $p->nama_barang ?></td>
+                <td><?= $p->kode_barang ?></td>
+                <td><?= $p->jumlah_masuk ?></td>
+                <td><?= $p->jumlah_keluar ?></td>
+                <td><?= $p->sisa_stok ?></td>
+                <td><?= $p->tgl_update_terakhir ?></td>
+
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalHarian" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Laporan Harian Stok Barang</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <table class="table table-stripped">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama Barang</th>
+              <th scope="col">Kode Barang</th>
+              <th scope="col">Jumlah Masuk</th>
+              <th scope="col">Jumlah Keluar</th>
+              <th scope="col">Sisa Stok</th>
+              <th scope="col">Tanggal Update Terakhir</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($stokHarian as $i => $p): ?>
+              <tr>
+                <td><?= $i + 1 ?></td>
+                <td><?= $p->nama_barang ?></td>
+                <td><?= $p->kode_barang ?></td>
+                <td><?= $p->jumlah_masuk ?></td>
+                <td><?= $p->jumlah_keluar ?></td>
+                <td><?= $p->sisa_stok ?></td>
+                <td><?= $p->tgl_update_terakhir ?></td>
+
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <script>
     function resetModal() {
