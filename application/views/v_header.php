@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdminLTE Integration</title>
+  <title>Inventori Barang</title>
   <!-- Tambahkan CSS AdminLTE -->
   <link rel="stylesheet" href="<?= base_url('assets/css/adminlte.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/all.min.css'); ?>">
@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="node_modules/admin-lte/plugins/summernote/summernote-bs4.min.css">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="icon" href="<?= base_url('assets/logo-login.png');?>">
 </head>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">

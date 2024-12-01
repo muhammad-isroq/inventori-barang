@@ -35,47 +35,104 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
-           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                
-              </p>
-            </a>
-          </li>
+           <li class="nav-item">
+            <a href="<?= base_url('Dashboard_admin');?>" class="nav-link  <?php
+            if($this->uri->segment(1) == 'Dashboard_admin'){
+              echo 'active';
+            }
+            elseif($this->uri->segment(1) == 'Dashboard_petugas'){
+              echo 'active';
+            } else{
+              PHP_EOL;
+            }
+          ?>">
+          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            Dashboard
 
-          <li class="nav-item">
-            <a href="<?= base_url('Barang');?>" class="nav-link">
-              <i class="nav-icon fi fi-tr-canned-food"></i>
-              <p>
-                Barang
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fi fi-tr-warehouse-alt"></i>
-              <p>
-                Stok Barang
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fi fi-tr-supplier-alt"></i>
-              <p>
-                Supplier
-                
-              </p>
-            </a>
-          </li>
+          </p>
+        </a>
+      </li>
 
-          
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+      <li class="nav-item">
+        <a href="<?= base_url('Barang');?>" class="nav-link  <?php
+            if($this->uri->segment(1) == 'Barang'){
+              echo 'active';
+            } else{
+              PHP_EOL;
+            }
+          ?>">
+          <i class="nav-icon fi fi-tr-canned-food"></i>
+          <p>
+            Barang
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link <?php
+            if($this->uri->segment(1) == 'Stok'){
+              echo 'active';
+            } else{
+              PHP_EOL;
+            }
+          ?>">
+          <i class="nav-icon fi fi-tr-warehouse-alt"></i>
+          <p>
+            Stok Barang
+
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link <?php
+            if($this->uri->segment(1) == 'Supplier'){
+              echo 'active';
+            } else{
+              PHP_EOL;
+            }
+          ?>">
+          <i class="nav-icon fi fi-tr-supplier-alt"></i>
+          <p>
+            Supplier
+
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link <?php
+            if($this->uri->segment(1) == 'Pembelian'){
+              echo 'active';
+            } else{
+              PHP_EOL;
+            }
+          ?>">
+          <i class="fi fi-tr-cart-shopping-fast"></i>
+          <p>
+            Pembelian
+
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link <?php
+            if($this->uri->segment(1) == 'Penjualan'){
+              echo 'active';
+            } else{
+              PHP_EOL;
+            }
+          ?>">
+          <i class="fi fi-tr-point-of-sale-bill"></i>
+          <p>
+            Penjualan
+
+          </p>
+        </a>
+      </li>
+
+
+    </ul>
+  </nav>
+  <!-- /.sidebar-menu -->
+</div>
+<!-- /.sidebar -->
+</aside>

@@ -8,6 +8,10 @@ class Barang extends CI_Controller {
         if(empty($this->session->userdata('login'))){
             redirect('Auth');
         }
+        $role = $this->session->userdata('role');
+        if($role != 'admin' && $role != 'petugas'){
+            redirect('Auth');
+        }
         $this->load->model('M_barang');
         $this->load->model('M_user');
     }
@@ -25,9 +29,9 @@ class Barang extends CI_Controller {
     {
         $data['barang'] = $this->M_barang->tampil_data()->result_array();
 
-        $this->load->view('v_header', $data);
+        // $this->load->view('v_header', $data);
         $this->load->view('barang/v_laporan', $data);
-        $this->load->view('v_footer'); 
+        // $this->load->view('v_footer'); 
     }
     
     public function insert_barang()

@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Data Barang</title>
-	<link rel="icon" href="<?= base_url();?>/assets/logo-login.png" type="image">
-	<link rel="stylesheet" href="<?= base_url('node_modules/bootstrap/dist/css/bootstrap.min.css'); ?>">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-	<link rel="stylesheet" href="<?= base_url('node_modules/aos/dist/aos.css'); ?>">
-</head>
-<body>
-	<section class="content m-2">
-		<div class="container mt-4">
+<?php
+$role = $this->session->userdata('role');
+if ($role == 'admin') {
+	$this->load->view('v_sidebar_admin');
+} elseif ($role == 'petugas') {
+	$this->load->view('v_sidebar_petugas');
+}
+?>
+
+<!-- Content Wrapper -->
+<div class="content-wrapper">
+	<section class="content">
+		<div class="container-fluid">
 
 
 			<h2 class="text-center ">Data Barang</h2>
 			<button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal1">
-				tambah
+				<i class="fi fi-tr-square-plus"></i>
 			</button>
-			<a href="<?= base_url('barang/laporan');?>" class="btn btn-success">Laporan Data Laporan</a>
+			<a href="<?= base_url('barang/laporan');?>" class="btn btn-success"><i class="fi fi-tr-newspaper"></i></a>
 			<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog modal-fullscreen-xxl-down">
 					<div class="modal-content">
@@ -115,7 +114,7 @@
 										<td><?= $r['harga'];?></td>            
 										<td>
 
-											<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $r['id_barang'];?>">Ubah</button>
+											<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $r['id_barang'];?>"><i class="fi fi-tr-file-edit"></i></button>
 
 
 											<div class="modal fade" id="exampleModal2<?php echo $r['id_barang'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -184,7 +183,7 @@
 											</div>
 										</td>     
 										<td>
-											<a href="<?=base_url().'Barang/hapus_barang/'.$r['id_barang']; ?>" type="button" class="btn btn-danger" onclick="return confirm('yakin ingin menghapus?');">hapus</a>   
+											<a href="<?=base_url().'Barang/hapus_barang/'.$r['id_barang']; ?>" type="button" class="btn btn-danger" onclick="return confirm('yakin ingin menghapus?');"><i class="fi fi-tr-trash-xmark"></i></a>   
 										</td>                
 									</tr>
 									<?php $no++;} ?>  
@@ -195,12 +194,4 @@
 				</div>									
 			</div>
 		</section>
-
-
-		<script src="<?= base_url('node_modules/aos/dist/aos.js'); ?>"></script>
-		<script>
-			AOS.init();
-		</script>
-		<script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
-	</body>
-	</html>
+	</div>
