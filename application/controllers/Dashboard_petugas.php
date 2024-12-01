@@ -12,9 +12,9 @@ class Dashboard_petugas extends CI_Controller {
 
     public function index(){
         
-        $this->load->view('petugas/v_header_petugas');
+        $this->load->view('v_header');
         $this->load->view('petugas/v_petugas');
-        $this->load->view('petugas/v_footer_petugas');
+        $this->load->view('v_footer');
     }
 
    
