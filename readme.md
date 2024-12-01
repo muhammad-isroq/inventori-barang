@@ -31,5 +31,4 @@ Mengelola pengaturan aplikasi (seperti backup data, dll.)
 
 Mengelola data barang, stok barang dan supplier (memperbarui stok, mencatat barang masuk/keluar)
 
-Melakukan transaksi pembelian dan penjualan
 
